@@ -43,7 +43,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">accrualPlot</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.2</span>
       </span>
     </div>
 
@@ -95,12 +95,19 @@
 <p>The package can be installed from the CTU Bern universe via</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'accrualPlot'</span>, repos <span class="op">=</span> <span class="st">'https://ctu-bern.r-universe.dev'</span><span class="op">)</span></code></pre></div>
+<p><code>accrualPlot</code> can be installed directly from from github with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"CTU-Bern/accrualPlot"</span><span class="op">)</span></code></pre></div>
+<p>Note that <code>remotes</code> treats any warnings (e.g. that a certain package was built under a different version of R) as errors. If you see such an error, run the following line and try again:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>R_REMOTES_NO_ERRORS_FROM_WARNINGS <span class="op">=</span> <span class="st">"true"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
 <p>The first step to using <code>accrualPlot</code> is to create an accrual dataframe. This is simply a dataframe with a counts of participants included per day.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># load package</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/CTU-Bern/accrualPlot">accrualPlot</a></span><span class="op">)</span>
 <span class="co">#&gt; Loading required package: lubridate</span>
@@ -116,12 +123,17 @@
 
 <span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/accrual_create_df.html">accrual_create_df</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></code></pre></div>
 <p>Cumulative and absolute recruitment plots , as well as a method to predict the time point of study completion, are included.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">3</span><span class="op">)</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">df</span>, which <span class="op">=</span> <span class="st">"cum"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">df</span>, which <span class="op">=</span> <span class="st">"abs"</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">df</span>, which <span class="op">=</span> <span class="st">"pred"</span>, target <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-3-1.png"><!-- --></p>
+<div id="acknowledgements" class="section level3">
+<h3 class="hasAnchor">
+<a href="#acknowledgements" class="anchor"></a>Acknowledgements</h3>
+<p>The package logo was created with <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code></a> and <a href="https://github.com/GuangchuangYu/hexSticker"><code>hexSticker</code></a> with icons from <a href="https://fontawesome.com/">Font Awesome</a> (via the <a href="https://github.com/GuangchuangYu/emojifont">emojifont package</a>).</p>
+</div>
 </div>
 </div>
   </div>
@@ -154,7 +166,7 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/CTU-Bern/accrualPlot"><img src="https://img.shields.io/badge/dev%20version-0.6.0-blue.svg"></a></li>
+<li><a href="https://github.com/CTU-Bern/accrualPlot"><img src="https://img.shields.io/badge/dev%20version-0.6.2-blue.svg"></a></li>
 <li><a href="https://github.com/CTU-Bern/accrualPlot/actions"><img src="https://github.com/CTU-Bern/accrualPlot/workflows/R-CMD-check/badge.svg" alt="Actions Status"></a></li>
 </ul>
 </div>
